@@ -1,0 +1,19 @@
+user |
+- dashboard |
+                - coin wallet
+- upload payment Proof | - Buy
+                         - Sell
+- payment history
+- massage 
+
+admin |
+- dashboard | - amount of user
+              - Total amount of coin
+              - Total income
+
+- payment upload page | - Aprove 
+                        - Decline
+
+- Massage | - Total Message
+            - Reply chat
+            - Chat History
