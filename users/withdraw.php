@@ -69,6 +69,11 @@ include('../db/config.php');
                 <input type="text" id="walletAddress" name="wallet_address" class="w-full px-4 py-2 border rounded-md" placeholder="Enter your wallet address">
             </div>
 
+            <div class="mb-4 hidden" id="walletAddressAmountContainer">
+                <label for="walletAmount" class="block text-sm font-bold mb-2">Amount</label>
+                <input type="text" id="walletAount" name="wallet_Amount" class="w-full px-4 py-2 border rounded-md" placeholder="Enter your wallet address">
+            </div>
+
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Withdraw</button>
         </form>
 
@@ -161,6 +166,7 @@ include('../db/config.php');
                     accountNameContainer.classList.remove('hidden');
                     bankNameContainer.classList.remove('hidden');
                     walletAddressContainer.classList.add('hidden');
+                    walletAddressAmountContainer.classList.add('hidden');
                 }
             });
         </script>
