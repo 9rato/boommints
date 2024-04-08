@@ -55,21 +55,21 @@ include('../db/config.php');
                 <p class="text-center font-semibold">Deposit Naira</p>
             </div>
             <div class="bg-white p-4 rounded-md cursor-pointer hover:shadow-md transition duration-300 coin-card" data-coin="coin2">
-                <img src="coin2.svg" alt="Coin 2" class="w-20 h-20 mx-auto mb-4">
+                <img src="../images/16193.png" alt="Coin 2" class="w-20 h-20 mx-auto mb-4">
                 <p class="text-center font-semibold">Pi Coin</p>
             </div>
             <div class="bg-white p-4 rounded-md cursor-pointer hover:shadow-md transition duration-300 coin-card" data-coin="coin3">
-                <img src="coin3.svg" alt="Coin 3" class="w-20 h-20 mx-auto mb-4">
+                <img src="../images/v91_170.png" alt="Coin 3" class="w-20 h-20 mx-auto mb-4">
                 <p class="text-center font-semibold">USDT</p>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <div class="bg-white p-4 rounded-md cursor-pointer hover:shadow-md transition duration-300 coin-card" data-coin="coin4">
-                <img src="coin4.svg" alt="Coin 4" class="w-20 h-20 mx-auto mb-4">
+                <img src="../images/pepe.png" alt="Coin 4" class="w-20 h-20 mx-auto mb-4">
                 <p class="text-center font-semibold">Pepe Coin</p>
             </div>
             <div class="bg-white p-4 rounded-md cursor-pointer hover:shadow-md transition duration-300 coin-card" data-coin="coin5">
-                <img src="coin5.svg" alt="Coin 5" class="w-20 h-20 mx-auto mb-4">
+                <img src="../images/XRP.png" alt="Coin 5" class="w-20 h-20 mx-auto mb-4">
                 <p class="text-center font-semibold">XRP Coin</p>
             </div>
         </div>
@@ -89,9 +89,8 @@ include('../db/config.php');
     <div id="coinDetailsModalCoin2" class="coin-details-modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden">
         <div class="coin-details-modal-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-lg">
             <h2 class="text-2xl font-bold mb-4">Pi Coin Details</h2>
-            <p>Wallet Address: OPay</p>
-            <p>Account Name: Ajose Moshood</p>
-            <p>Account Number: 8146883083</p>
+            <p>Wallet Address: GDJTEQ4V7NZNUR4XJ56VMOMTSBZH5LG55LPMD3OJY4N5YB2XYUD4NFUZ</p>
+            <p>Note tag: Ajose Boommint</p>
             <button class="close-modal-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
         </div>
     </div>
