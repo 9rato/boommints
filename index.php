@@ -218,11 +218,9 @@ include('template/header.php');
         <div class="bg-gray-100 p-4 md:p-8">
             <h4 class="text-sm text-center font-bold md:mt-10 mb-4 text-violet-950">Also, support and join our social links for more updates</h4>
             <div class="flex flex-col md:flex-row items-center md:gap-4 md:ml-2 ml-8">
-    <a href="https://t.me/your-telegram-channel" target="_blank" rel="noopener noreferrer" class="flex items-center bg-blue-500 text-white font-bold py-2 px-4 rounded md:mb-0 mb-2">
-        <svg class="w-12 h-12 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816Z" fill="white"/>
-        </svg>
-        <p>Join us on Telegram</p>
+    <a href="https://t.me/your-telegram-channel" target="_blank" rel="noopener noreferrer" class="flex items-center bg-black text-white font-bold py-2 px-4 rounded md:mb-0 mb-2">
+        <img src="./assets/image/items/twitter-154-svgrepo-com.svg" class="w-12 h-12 mr-2" alt="" srcset="">
+        <p>Join us on Twitter</p>
     </a>
     <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer" class="flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded">
         <svg class="w-12 h-12 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
