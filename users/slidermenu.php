@@ -21,7 +21,7 @@
 				<img src="../assets/image/items/sell-card-svgrepo-com.svg" alt="" class="w-6 h-6 stroke-current filter invert">
 					<span class="ml-2 text-sm font-medium">Sell</span>
 				</a>
-				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-indigo-700" href="upload.php">
+				<a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-indigo-700" href="comingsoon.php">
 				<img src="../assets/image/items/buy-svgrepo-com.svg" alt="" class="w-6 h-6 stroke-current filter invert">
 					<span class="ml-2 text-sm font-medium">Buy</span>
 				</a>

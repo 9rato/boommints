@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = sanitize_input($_POST["password"]);
 
     // Query to check if the username and password match
-    $query = "SELECT id FROM users WHERE username='$username' AND password='$password'";
+    $query = "SELECT id FROM admin WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $query);
 
     // Check if query was successful and if there is a match

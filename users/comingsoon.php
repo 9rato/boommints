@@ -20,7 +20,7 @@
         <p class="text-white text-xl md:text-2xl">
             We're working hard to bring you something amazing. Stay tuned!
         </p>
-        <a href="index.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-[40px] button relative float">
+        <a href="dashboard.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-[40px] button relative float">
             Home
         </a>
     </div>
