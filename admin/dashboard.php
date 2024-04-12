@@ -196,7 +196,26 @@ mysqli_close($conn);
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Users</h5>
-                                <h3 class="font-bold text-3xl">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <?php
+                                //USDT code
+                                include('./db/config.php');
+                                // SQL query to calculate total balance
+                                $sql = "SELECT SUM(id) AS total_balance FROM users";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    // Output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        $total_balance = $row["total_balance"];
+                                    }
+                                } else {
+                                    $total_balance = 0;
+                                }
+
+                                $conn->close();
+                                ?>
+                                <h3 class="font-bold text-3xl"><?php echo number_format($total_balance); ?><span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
