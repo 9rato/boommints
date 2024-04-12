@@ -97,10 +97,16 @@ include('../db/config.php');
         <!-- Coin Details Modals -->
     <div id="coinDetailsModalCoin3" class="coin-details-modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden">
         <div class="coin-details-modal-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-lg">
-            <h2 class="text-2xl font-bold mb-4">Pi Coin Details</h2>
-            <p>Wallet Address: OPay</p>
-            <p>Account Name: Ajose Moshood</p>
-            <p>Account Number: 8146883083</p>
+            <h2 class="text-2xl font-bold mb-4">USDT Details</h2>
+            <p>Coming Soon</p>
+            <button class="close-modal-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
+        </div>
+    </div>
+     <!-- Coin Details Modals -->
+     <div id="coinDetailsModalCoin3" class="coin-details-modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 hidden">
+        <div class="coin-details-modal-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Pepe Coin</h2>
+            <p>Coming Soon</p>
             <button class="close-modal-btn mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Close</button>
         </div>
     </div>

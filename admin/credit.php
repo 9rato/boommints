@@ -81,7 +81,7 @@ mysqli_close($conn);
                                 <li>
                                     <hr class="border-t mx-2 border-gray-400">
                                 </li>
-                                <li><a href="logout.php" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Logout</a></li>
+                                <li><a href="#" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Logout</a></li>
                             </ul>
                         </div>
                     </div>
@@ -160,7 +160,7 @@ mysqli_close($conn);
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Revenue</h5>
-                                <h3 class="font-bold text-3xl">N3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
