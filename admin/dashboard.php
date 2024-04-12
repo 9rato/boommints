@@ -222,11 +222,30 @@ mysqli_close($conn);
                     <div class="bg-white border rounded shadow p-2">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-blue-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
+                            <div class="rounded p-3 bg-green-600"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-500">Server Uptime</h5>
-                                <h3 class="font-bold text-3xl">152 days</h3>
+                                <h5 class="font-bold uppercase text-gray-500">Total USDT</h5>
+                                <?php
+                                //USDT code
+                                include('./db/config.php');
+                                // SQL query to calculate total balance
+                                $sql = "SELECT SUM(USDT_Balance) AS total_balance FROM usdt";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    // Output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        $total_balance = $row["total_balance"];
+                                    }
+                                } else {
+                                    $total_balance = 0;
+                                }
+
+                                $conn->close();
+                                ?>
+                                <h3 class="font-bold text-3xl">USDT:<?php echo number_format($total_balance, 2); ?></h3>
                             </div>
                         </div>
                     </div>
