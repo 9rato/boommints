@@ -197,31 +197,34 @@ mysqli_close($conn);
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Users</h5>
                                 <?php
-                                // Include database configuration
-                                include('./db/config.php');
-                                
-                                // Initialize total_users variable
-                                $total_users = 0;
-                                
-                                // SQL query to count total users
-                                $sql = "SELECT COUNT(*) AS total_users FROM users";
-                                
-                                // Execute the query
-                                $result = $conn->query($sql);
-                                
-                                if ($result === false) {
-                                    // If there is an error in the query, display the error message
-                                    echo "Error: " . $conn->error;
-                                } else {
-                                    // Fetch the result row
-                                    $row = $result->fetch_assoc();
-                                    // Get the total number of users
-                                    $total_users = $row["total_users"];
-                                }
-                                
-                                // Close the database connection
-                                $conn->close();
-                            ?>
+                                    // Include database configuration
+                                    include('./db/config.php');
+                                    
+                                    // Initialize total_users variable
+                                    $total_users = 0;
+                                    
+                                    // SQL query to count total users
+                                    $sql = "SELECT COUNT(user_id) AS total_users FROM users";
+                                    
+                                    // Execute the query
+                                    $result = $conn->query($sql);
+                                    
+                                    if ($result === false) {
+                                        // If there is an error in the query, display the error message
+                                        echo "Error: " . $conn->error;
+                                    } else {
+                                        // Check if any rows were returned
+                                        if ($result->num_rows > 0) {
+                                            // Fetch the result row
+                                            $row = $result->fetch_assoc();
+                                            // Get the total number of users
+                                            $total_users = $row["total_users"];
+                                        }
+                                    }
+                                    
+                                    // Close the database connection
+                                    $conn->close();
+                                ?>
 
                             <!-- Display the total number of users -->
                             <h3 class="font-bold text-3xl"><?php echo number_format($total_users); ?> <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
