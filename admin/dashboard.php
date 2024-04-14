@@ -200,21 +200,26 @@ mysqli_close($conn);
                                     // Include database configuration
                                     include('./db/config.php');
                                     
+                                    // Initialize total_users variable
+                                    $total_users = 0;
+                                    
                                     // SQL query to count total users
                                     $sql = "SELECT COUNT(user_id) AS total_users FROM users";
                                     
                                     // Execute the query
                                     $result = $conn->query($sql);
                                     
-                                    // Check if any rows were returned
-                                    if ($result->num_rows > 0) {
-                                        // Fetch the result row
-                                        $row = $result->fetch_assoc();
-                                        // Get the total number of users
-                                        $total_users = $row["total_users"];
+                                    if ($result === false) {
+                                        // If there is an error in the query, display the error message
+                                        echo "Error: " . $conn->error;
                                     } else {
-                                        // If no rows returned, set total users to 0
-                                        $total_users = 0;
+                                        // Check if any rows were returned
+                                        if ($result->num_rows > 0) {
+                                            // Fetch the result row
+                                            $row = $result->fetch_assoc();
+                                            // Get the total number of users
+                                            $total_users = $row["total_users"];
+                                        }
                                     }
                                     
                                     // Close the database connection
