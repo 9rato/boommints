@@ -201,7 +201,7 @@ mysqli_close($conn);
                                     include('./db/config.php');
                                     
                                     // SQL query to count total users
-                                    $sql = "SELECT COUNT(*) AS total_users FROM users";
+                                    $sql = "SELECT COUNT(user_id) AS total_users FROM users";
                                     
                                     // Execute the query
                                     $result = $conn->query($sql);
