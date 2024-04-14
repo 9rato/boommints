@@ -197,25 +197,32 @@ mysqli_close($conn);
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-500">Total Users</h5>
                                 <?php
-                                //USDT code
-                                include('./db/config.php');
-                                // SQL query to calculate total balance
-                                $sql = "SELECT SUM(id) AS total_balance FROM users";
-
-                                $result = $conn->query($sql);
-
-                                if ($result->num_rows > 0) {
-                                    // Output data of each row
-                                    while ($row = $result->fetch_assoc()) {
-                                        $total_balance = $row["total_balance"];
+                                    // Include database configuration
+                                    include('./db/config.php');
+                                    
+                                    // SQL query to count total users
+                                    $sql = "SELECT COUNT(*) AS total_users FROM users";
+                                    
+                                    // Execute the query
+                                    $result = $conn->query($sql);
+                                    
+                                    // Check if any rows were returned
+                                    if ($result->num_rows > 0) {
+                                        // Fetch the result row
+                                        $row = $result->fetch_assoc();
+                                        // Get the total number of users
+                                        $total_users = $row["total_users"];
+                                    } else {
+                                        // If no rows returned, set total users to 0
+                                        $total_users = 0;
                                     }
-                                } else {
-                                    $total_balance = 0;
-                                }
-
-                                $conn->close();
+                                    
+                                    // Close the database connection
+                                    $conn->close();
                                 ?>
-                                <h3 class="font-bold text-3xl"><?php echo number_format($total_balance); ?><span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+
+<!-- Display the total number of users -->
+<h3 class="font-bold text-3xl"><?php echo number_format($total_users); ?><span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -278,8 +285,27 @@ mysqli_close($conn);
                                 <div class="rounded p-3 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-500">To Do List</h5>
-                                <h3 class="font-bold text-3xl">7 tasks</h3>
+                                <h5 class="font-bold uppercase text-gray-500">Total Pi coin</h5>
+                                <?php
+                                //piwallet code
+                                include('./db/config.php');
+                                // SQL query to calculate total balance
+                                $sql = "SELECT SUM(Pi_Balance) AS total_balance FROM piwallet";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    // Output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                        $total_balance = $row["total_balance"];
+                                    }
+                                } else {
+                                    $total_balance = 0;
+                                }
+
+                                $conn->close();
+                                ?>
+                                <h3 class="font-bold text-3xl">Pi:<?php echo number_format($total_balance, 2); ?></h3>
                             </div>
                         </div>
                     </div>
