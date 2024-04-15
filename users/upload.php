@@ -103,7 +103,7 @@ include('../db/config.php');
 
         // Execute SQL statement
         if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('<div class=\"container mx-auto p-4 bg-green-200 text-green-800 rounded-md mt-4\">New record inserted successfully</div>');</script>";
+            echo "<script>alert('Prove submitted');</script>";
 
         } else {
             echo "<div class='container mx-auto p-4 bg-red-200 text-red-800 rounded-md mt-4'>Error: " . $sql . "<br>" . $conn->error . "</div>";

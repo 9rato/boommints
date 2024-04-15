@@ -37,10 +37,12 @@ include('../db/config.php');
         <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-<div class="container mx-auto py-8">
+    <div class="container mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">Withdrawal Form</h1>
     
-    <form class="max-w-md mx-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+    <form class="max-w-md mx-auto" action="withdrawal_process.php" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
+        
         <div class="mb-4">
             <label for="withdrawalMethod" class="block text-sm font-bold mb-2">Withdrawal Method</label>
             <select id="withdrawalMethod" name="withdrawal_method" class="w-full px-4 py-2 border rounded-md">
@@ -67,6 +69,11 @@ include('../db/config.php');
         <div class="mb-4 hidden" id="walletAddressContainer">
             <label for="walletAddress" class="block text-sm font-bold mb-2">Wallet Address</label>
             <input type="text" id="walletAddress" name="wallet_address" class="w-full px-4 py-2 border rounded-md" placeholder="Enter your wallet address">
+        </div>
+
+        <div class="mb-4" id="accountAmountContainer">
+            <label for="accountAmount" class="block text-sm font-bold mb-2">Amount</label>
+            <input type="text" id="accountAmount" name="withdrawal_amount" class="w-full px-4 py-2 border rounded-md" placeholder="Enter withdrawal amount">
         </div>
 
         <div class="mb-4 hidden" id="walletAddressAmountContainer">
@@ -129,7 +136,7 @@ include('../db/config.php');
                     // Withdrawal successful
                     echo "<p class='text-green-500'>Withdrawal successful. Your new balance is $newBalance $withdrawalMethod.</p>";
 
-                    // Insert withdrawal  record into history
+                    // Insert withdrawal record into history
                     $insertQuery = "INSERT INTO withdrawal_history (user_id, withdrawal_method, amount) VALUES (?, ?, ?)";
                     if ($insertStmt = $mysqli->prepare($insertQuery)) {
                         $insertStmt->bind_param("ssd", $_SESSION['user_id'], $withdrawalMethod, $withdrawalAmount);
@@ -151,6 +158,7 @@ include('../db/config.php');
     <script>
         const withdrawalMethodSelect = document.getElementById('withdrawalMethod');
         const accountNumberContainer = document.getElementById('accountNumberContainer');
+        const accountAmountContainer = document.getElementById('accountAmountContainer');
         const accountNameContainer = document.getElementById('accountNameContainer');
         const bankNameContainer = document.getElementById('bankNameContainer');
         const walletAddressContainer = document.getElementById('walletAddressContainer');
@@ -161,18 +169,21 @@ include('../db/config.php');
                 accountNumberContainer.classList.add('hidden');
                 accountNameContainer.classList.add('hidden');
                 bankNameContainer.classList.add('hidden');
+                accountAmountContainer.classList.add('hidden'); // Hide the account amount field
                 walletAddressContainer.classList.remove('hidden');
                 walletAddressAmountContainer.classList.remove('hidden');
             } else {
                 accountNumberContainer.classList.remove('hidden');
                 accountNameContainer.classList.remove('hidden');
                 bankNameContainer.classList.remove('hidden');
+                accountAmountContainer.classList.remove('hidden'); // Show the account amount field
                 walletAddressContainer.classList.add('hidden');
                 walletAddressAmountContainer.classList.add('hidden');
             }
         });
     </script>
 </div>
+
 <!--end of component-->
 
 
