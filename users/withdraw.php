@@ -40,7 +40,7 @@ include('../db/config.php');
     <div class="container mx-auto py-8">
     <h1 class="text-2xl font-bold mb-4">Withdrawal Form</h1>
     
-    <form class="max-w-md mx-auto" action="withdrawal_process.php" method="POST">
+    <form class="max-w-md mx-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
         
         <div class="mb-4">
