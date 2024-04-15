@@ -338,36 +338,47 @@ mysqli_close($conn);
 
             <div class="flex flex-row flex-wrap flex-grow mt-2">
 
-                <div class="w-full md:w-1/2 p-3">
-                    <!--Graph Card-->
-                    
+            
+                <div class="w-full p-3">
+                    <!--Naira credit-->
+                    <div class="bg-white border rounded shadow">
+                    <?php
+                    // Connect to MySQL database
+                    include('../db/config.php');
+                    // Check if form is submitted
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $username = $_POST["username"];
+                        $amount = $_POST["amount"];
+
+                        // Query to update Naira balance for the given username
+                        $sql = "UPDATE naira SET Naira_Balance = Naira_Balance + $amount WHERE Username = '$username'";
+
+                        if ($mysqli->query($sql) === TRUE) {
+                            echo "Naira wallet credited successfully for user: $username";
+                        } else {
+                            echo "Error updating record: " . $mysqli->error;
+                        }
+                    }
+                    ?>
+                     <h1 class="text-4xl font-bold text-center mb-8">Credit Naira Wallet</h1>
+                    <form method="post" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+                        <div class="mb-4">
+                            <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
+                            <input type="text" name="username" id="username" class="form-input w-full">
+                        </div>
+                        <div class="mb-4">
+                            <label for="amount" class="block text-gray-700 font-bold mb-2">Amount to Credit:</label>
+                            <input type="number" name="amount" id="amount" class="form-input w-full">
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Credit</button>
+                        </div>
+                    </form>
+                    </div>
                     <!--/Graph Card-->
                 </div>
 
-                <div class="w-full md:w-1/2 p-3">
-                    <!--Graph Card-->
-                    
-                    <!--/Graph Card-->
-                </div>
-
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Graph Card-->
-                   
-                    <!--/Graph Card-->
-                </div>
-
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Graph Card-->
-                   
-                    <!--/Graph Card-->
-                </div>
-
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Template Card-->
-                    
-                    <!--/Template Card-->
-                </div>
-
+              
                 <div class="w-full p-3">
                     <!--Table Card-->
                     <div class="bg-white border rounded shadow">
