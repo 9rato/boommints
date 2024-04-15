@@ -343,23 +343,39 @@ mysqli_close($conn);
                     <!--Naira credit-->
                     <div class="bg-white border rounded shadow">
                     <?php
-                    // Connect to MySQL database
-                    include('../db/config.php');
-                    // Check if form is submitted
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        $username = $_POST["username"];
-                        $amount = $_POST["amount"];
+                        include('../db/config.php');
 
-                        // Query to update Naira balance for the given username
-                        $sql = "UPDATE naira SET Naira_Balance = Naira_Balance + $amount WHERE Username = '$username'";
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            $username = $_POST["username"];
+                            $amount = $_POST["amount"];
 
-                        if ($mysqli->query($sql) === TRUE) {
-                            echo "Naira wallet credited successfully for user: $username";
-                        } else {
-                            echo "Error updating record: " . $mysqli->error;
+                            // Validate input
+                            if (!empty($username) && is_numeric($amount) && $amount > 0) {
+                                // Prepare SQL statement
+                                $sql = "UPDATE naira SET Naira_Balance = Naira_Balance + ? WHERE Username = ?";
+                                
+                                // Prepare and bind parameters
+                                if ($stmt = $mysqli->prepare($sql)) {
+                                    $stmt->bind_param("ds", $amount, $username);
+
+                                    // Execute the statement
+                                    if ($stmt->execute()) {
+                                        echo "Naira wallet credited successfully for user: $username";
+                                    } else {
+                                        echo "Error updating record: " . $stmt->error;
+                                    }
+
+                                    // Close statement
+                                    $stmt->close();
+                                } else {
+                                    echo "Error preparing statement: " . $mysqli->error;
+                                }
+                            } else {
+                                echo "Invalid input. Please provide a valid username and a positive amount.";
+                            }
                         }
-                    }
-                    ?>
+                        ?>
+
                      <h1 class="text-4xl font-bold text-center mb-8">Credit Naira Wallet</h1>
                     <form method="post" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
                         <div class="mb-4">
