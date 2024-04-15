@@ -129,7 +129,7 @@ include('../db/config.php');
                     // Withdrawal successful
                     echo "<p class='text-green-500'>Withdrawal successful. Your new balance is $newBalance $withdrawalMethod.</p>";
 
-                    // Insert withdrawal record into history
+                    // Insert withdrawal  record into history
                     $insertQuery = "INSERT INTO withdrawal_history (user_id, withdrawal_method, amount) VALUES (?, ?, ?)";
                     if ($insertStmt = $mysqli->prepare($insertQuery)) {
                         $insertStmt->bind_param("ssd", $_SESSION['user_id'], $withdrawalMethod, $withdrawalAmount);

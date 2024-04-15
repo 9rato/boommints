@@ -343,53 +343,91 @@ mysqli_close($conn);
                     <!--Naira credit-->
                     <div class="bg-white border rounded shadow">
                     <?php
-                        include('../db/config.php');
+include('../db/config.php');
 
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            $username = $_POST["username"];
-                            $amount = $_POST["amount"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $amount = $_POST["amount"];
 
-                            // Validate input
-                            if (!empty($username) && is_numeric($amount) && $amount > 0) {
-                                // Prepare SQL statement
-                                $sql = "UPDATE naira SET Naira_Balance = Naira_Balance + ? WHERE Username = ?";
-                                
-                                // Prepare and bind parameters
-                                if ($stmt = $mysqli->prepare($sql)) {
-                                    $stmt->bind_param("ds", $amount, $username);
+    // Validate input
+    if (!empty($username) && is_numeric($amount) && $amount > 0) {
+        // Prepare SQL statement
+        $sql = "UPDATE naira SET Naira_Balance = Naira_Balance + ? WHERE Username = ?";
+        
+        // Prepare and bind parameters
+        if ($stmt = $mysqli->prepare($sql)) {
+            $stmt->bind_param("ds", $amount, $username);
 
-                                    // Execute the statement
-                                    if ($stmt->execute()) {
-                                        echo "Naira wallet credited successfully for user: $username";
-                                    } else {
-                                        echo "Error updating record: " . $stmt->error;
-                                    }
+            // Execute the statement
+            if ($stmt->execute()) {
+                // If successful, return a JSON response
+                $response = array("success" => true, "message" => "Naira wallet credited successfully for user: $username");
+                echo json_encode($response);
+                exit(); // Stop further execution
+            } else {
+                // If execution fails, return an error message
+                $response = array("success" => false, "message" => "Error updating record: " . $stmt->error);
+                echo json_encode($response);
+                exit(); // Stop further execution
+            }
 
-                                    // Close statement
-                                    $stmt->close();
-                                } else {
-                                    echo "Error preparing statement: " . $mysqli->error;
-                                }
-                            } else {
-                                echo "Invalid input. Please provide a valid username and a positive amount.";
-                            }
-                        }
-                        ?>
+            // Close statement
+            $stmt->close();
+        } else {
+            // If preparing statement fails, return an error message
+            $response = array("success" => false, "message" => "Error preparing statement: " . $mysqli->error);
+            echo json_encode($response);
+            exit(); // Stop further execution
+        }
+    } else {
+        // If input validation fails, return an error message
+        $response = array("success" => false, "message" => "Invalid input. Please provide a valid username and a positive amount.");
+        echo json_encode($response);
+        exit(); // Stop further execution
+    }
+}
+?>
 
-                     <h1 class="text-4xl font-bold text-center mb-8">Credit Naira Wallet</h1>
-                    <form method="post" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
-                        <div class="mb-4">
-                            <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
-                            <input type="text" name="username" id="username" class="form-input w-full">
-                        </div>
-                        <div class="mb-4">
-                            <label for="amount" class="block text-gray-700 font-bold mb-2">Amount to Credit:</label>
-                            <input type="number" name="amount" id="amount" class="form-input w-full">
-                        </div>
-                        <div class="flex justify-center">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Credit</button>
-                        </div>
-                    </form>
+
+<h1 class="text-4xl font-bold text-center mb-8">Credit Naira Wallet</h1>
+        <div id="message" class="text-center"></div>
+        <form id="creditForm" class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
+                <input type="text" name="username" id="username" class="form-input w-full">
+            </div>
+            <div class="mb-4">
+                <label for="amount" class="block text-gray-700 font-bold mb-2">Amount to Credit:</label>
+                <input type="number" name="amount" id="amount" class="form-input w-full">
+            </div>
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Credit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('creditForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var formData = new FormData(this); // Get form data
+            fetch('', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                var messageDiv = document.getElementById('message');
+                messageDiv.textContent = data.message; // Display message
+                if (data.success) {
+                    messageDiv.classList.add('text-green-600'); // Add green color for success message
+                } else {
+                    messageDiv.classList.add('text-red-600'); // Add red color for error message
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
                     </div>
                     <!--/Graph Card-->
                 </div>
