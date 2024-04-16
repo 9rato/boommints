@@ -37,26 +37,10 @@ include('../db/config.php');
         <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-    <h1 class="text-2xl font-bold mb-4">Withdrawal Form</h1>
+    
         
-        <form class="max-w-md mx-auto" action="withdrawal_process.php" method="POST">
-            <div class="mb-4">
-                <label for="withdrawalMethod" class="block text-sm font-bold mb-2">Withdrawal Method</label>
-                <select id="withdrawalMethod" name="withdrawal_method" class="w-full px-4 py-2 border rounded-md">
-                    <option value="naira">Naira</option>
-                    <option value="usdt">USDT</option>
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <label for="withdrawalAmount" class="block text-sm font-bold mb-2">Withdrawal Amount</label>
-                <input type="text" id="withdrawalAmount" name="withdrawal_amount" class="w-full px-4 py-2 border rounded-md" placeholder="Enter withdrawal amount">
-            </div>
-
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Withdraw</button>
-        </form>
-</div>
         </div>
+
 <!--end of component-->
 
 
