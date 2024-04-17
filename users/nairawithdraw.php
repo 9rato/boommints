@@ -43,7 +43,9 @@ include('./db/config.php');
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_POST['amount'])) {
     if ($_SESSION['user_id'] && $_POST['amount'] > 0) {
         $user_id = $_SESSION['user_id'];
-        $usdt_address = $_POST['name']; // Changed from 'usdt_address' to 'name'
+        $bank_name = $_POST['bank_name']; // Changed from 'usdt_address' to 'name'
+        $account_number = $_POST['account_number']; 
+        $account_name = $_POST['account_name']; 
         $amount = $_POST['amount'];
         $withdrawal_method = "USDT"; // Assuming withdrawal method is USDT
         
@@ -88,8 +90,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="max-w-md mx-auto">
     <!-- Usdt Wallet Address Input -->
     <div class="mb-4">
-        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Usdt Wallet Address</label>
-        <input type="text" id="name" name="name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Bank Name</label>
+        <input type="text" id="bank_name" name="bank_name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+    </div>
+ <!-- Usdt Wallet Address Input -->
+ <div class="mb-4">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Account</label>
+        <input type="text" id="account" name="account" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+    </div>
+ <!-- Usdt Wallet Address Input -->
+ <div class="mb-4">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Account Name</label>
+        <input type="text" id="account_name" name="account_name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
     </div>
 
     <!-- Amount Input -->
