@@ -41,7 +41,7 @@ include('../db/config.php');
 include('./db/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_POST['amount'])) {
-    if ($_SESSION['user_id'] && $_POST['amount'] > 0) {
+    if ($_SESSION['user_id'] && $_POST['amount'] < 9) {
         $user_id = $_SESSION['user_id'];
         $usdt_address = $_POST['name']; // Changed from 'usdt_address' to 'name'
         $amount = $_POST['amount'];
