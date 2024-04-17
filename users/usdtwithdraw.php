@@ -40,10 +40,10 @@ include('../db/config.php');
     <?php
 include('./db/config.php');
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && isset($_POST['amount'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_POST['amount'])) {
     if ($_SESSION['user_id'] && $_POST['amount'] > 0) {
         $user_id = $_SESSION['user_id'];
-        $usdt_address = $_POST['usdt_address'];
+        $usdt_address = $_POST['name']; // Changed from 'usdt_address' to 'name'
         $amount = $_POST['amount'];
         $withdrawal_method = "USDT"; // Assuming withdrawal method is USDT
         
@@ -70,27 +70,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && is
 }
 ?>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="max-w-md mx-auto">
-        <!-- Name Input -->
-        <div class="mb-4">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Usdt Wallet Address</label>
-            <input type="text" id="name" name="name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
-        </div>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="max-w-md mx-auto">
+    <!-- Usdt Wallet Address Input -->
+    <div class="mb-4">
+        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Usdt Wallet Address</label>
+        <input type="text" id="name" name="name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+    </div>
 
-        <!-- Email Input -->
-        <div class="mb-4">
-            <label for="Amount" class="block text-gray-700 text-sm font-bold mb-2">Amount</label>
-            <input type="amount" id="amount" name="amount" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
-        </div>
+    <!-- Amount Input -->
+    <div class="mb-4">
+        <label for="amount" class="block text-gray-700 text-sm font-bold mb-2">Amount</label>
+        <input type="number" id="amount" name="amount" step="any" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+    </div>
 
-        
-        <!-- Submit Button -->
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">withdraw</button>
-    </form>
+    <!-- Submit Button -->
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Withdraw</button>
+</form>
 
-    <!-- Confirmation Message Container -->
-    <div id="confirmation-message" class="mt-4"></div>
-</div>
+<!-- Confirmation Message Container -->
+<div id="confirmation-message" class="mt-4"></div>
+
         
         </div>
 </div>
