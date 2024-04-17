@@ -34,10 +34,10 @@ include('../db/config.php');
     include('slidermenu.php');
     ?>
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col ml-8 card-box mb-[200px] mt-[60px]">
+        <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-    <div class="flex flex-col items-center md:flex-row md:justify-center">
+    <div class="flex flex-col items-center md:flex-row md:justify-center  mb-[200px] mt-[60px]">
   <!-- Naira Card -->
   <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
     <img class="w-full h-32 object-cover" src="https://via.placeholder.com/350x150" alt="Naira">
