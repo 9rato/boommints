@@ -34,7 +34,7 @@ include('../db/config.php');
     include('slidermenu.php');
     ?>
         <!-- Main Content -->
-        <div class="flex-1 flex flex-col ml-8 card-box mb-[100px] mt-[60px]">
+        <div class="flex-1 flex flex-col ml-8 card-box mb-[200px] mt-[60px]">
             <div class="container mx-auto mt-8">
     <!--component-->
     <div class="flex flex-col items-center md:flex-row md:justify-center">
