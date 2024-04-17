@@ -47,23 +47,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
         $amount = $_POST['amount'];
         $withdrawal_method = "USDT"; // Assuming withdrawal method is USDT
         
-        // Begin transaction
-        $conn->begin_transaction();
+        // Fetch user's current balance
+        $check_balance_sql = "SELECT USDT_Balance FROM usdt WHERE user_id = '$user_id'";
+        $result = $conn->query($check_balance_sql);
         
-        // Insert withdrawal details into withdrawal_history table
-        $insert_sql = "INSERT INTO withdrawal_history (user_id, withdrawal_method, amount, wallet_address, created_at) 
-                       VALUES ('$user_id', '$withdrawal_method', $amount, '$usdt_address', CURRENT_TIMESTAMP)";
-        $conn->query($insert_sql);
-        
-        // Deduct withdrawn amount from user balance
-        $update_balance_sql = "UPDATE usdt SET USDT_Balance = USDT_Balance - $amount WHERE user_id = '$user_id'";
-        $conn->query($update_balance_sql);
-        
-        // Commit transaction
-        $conn->commit();
-        
-        // Example of response after successful withdrawal
-        echo "<script>alert('Withdrawal successful!');</script>";
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $usdt_balance = $row['USDT_Balance'];
+            
+            if ($usdt_balance == 0) {
+                echo "<script>alert('Insufficient balance for withdrawal');</script>";
+            } else {
+                // Begin transaction
+                $conn->begin_transaction();
+                
+                // Insert withdrawal details into withdrawal_history table
+                $insert_sql = "INSERT INTO withdrawal_history (user_id, withdrawal_method, amount, wallet_address, created_at) 
+                               VALUES ('$user_id', '$withdrawal_method', $amount, '$usdt_address', CURRENT_TIMESTAMP)";
+                $conn->query($insert_sql);
+                
+                // Deduct withdrawn amount from user balance
+                $update_balance_sql = "UPDATE usdt SET USDT_Balance = USDT_Balance - $amount WHERE user_id = '$user_id'";
+                $conn->query($update_balance_sql);
+                
+                // Commit transaction
+                $conn->commit();
+                
+                // Example of response after successful withdrawal
+                echo "<script>alert('Withdrawal successful!');</script>";
+            }
+        } else {
+            echo "<script>alert('Error fetching user balance');</script>";
+        }
     } else {
         echo "<script>alert('Invalid request or amount must be greater than 0');</script>";
     }
@@ -92,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
 
 
         
-        </div>
+       
 </div>
 <!--end of component-->
 
