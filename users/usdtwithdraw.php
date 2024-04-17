@@ -38,8 +38,6 @@ include('../db/config.php');
             <div class="container mx-auto mt-8">
     <!--component-->
     <?php
-session_start();
-
 include('./db/config.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && isset($_POST['amount'])) {
