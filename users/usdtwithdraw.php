@@ -65,15 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && is
         $conn->commit();
         
         // Example of response after successful withdrawal
-        echo "Withdrawal successful!";
+        echo "<script>alert('Withdrawal successful!');</script>";
     } else {
-        echo "Invalid request or amount must be greater than 0.";
+        echo "<script>alert('Invalid request or amount must be greater than 0');</script>";
     }
 }
 ?>
-?>
 
-    <form action="" method="post" class="max-w-md mx-auto">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="max-w-md mx-auto">
         <!-- Name Input -->
         <div class="mb-4">
             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Usdt Wallet Address</label>
