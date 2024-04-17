@@ -50,19 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && is
         $withdrawal_method = "USDT"; // Assuming withdrawal method is USDT
         
         // Begin transaction
-        mysqli_begin_transaction($connection);
+        $conn->begin_transaction();
         
         // Insert withdrawal details into withdrawal_history table
         $insert_sql = "INSERT INTO withdrawal_history (user_id, withdrawal_method, amount, wallet_address, created_at) 
                        VALUES ('$user_id', '$withdrawal_method', $amount, '$usdt_address', CURRENT_TIMESTAMP)";
-        mysqli_query($connection, $insert_sql);
+        $conn->query($insert_sql);
         
         // Deduct withdrawn amount from user balance
         $update_balance_sql = "UPDATE usdt SET USDT_Balance = USDT_Balance - $amount WHERE user_id = '$user_id'";
-        mysqli_query($connection, $update_balance_sql);
+        $conn->query($update_balance_sql);
         
         // Commit transaction
-        mysqli_commit($connection);
+        $conn->commit();
         
         // Example of response after successful withdrawal
         echo "Withdrawal successful!";
@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['usdt_address']) && is
         echo "Invalid request or amount must be greater than 0.";
     }
 }
+?>
 ?>
 
     <form action="" method="post" class="max-w-md mx-auto">
