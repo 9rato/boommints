@@ -39,11 +39,12 @@ include('../db/config.php');
     <!--component-->
     <div class="flex flex-col items-center md:flex-row md:justify-center  mb-[200px] mt-[60px]">
   <!-- Naira Card -->
-  <div class="max-w-sm rounded overflow-hidden ../images/naira.png" alt="Naira">
+  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
+    <img class="w-full h-32 object-cover" src="../images/naira.png" alt="Naira">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Withdraw in Naira</div>
       <p class="text-gray-700 text-base">
-        Minimum: N500 
+       Minimum: N5000
       </p>
     </div>
     <div class="px-6 py-4">
@@ -59,7 +60,7 @@ include('../db/config.php');
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Withdraw in USDT</div>
       <p class="text-gray-700 text-base">
-        Minimum: 10USDT
+      Minimum: 10USDT
       </p>
     </div>
     <div class="px-6 py-4">
