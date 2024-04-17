@@ -37,7 +37,7 @@ include('../db/config.php');
         <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-    
+        
         
         </div>
 
