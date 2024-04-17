@@ -37,40 +37,27 @@ include('../db/config.php');
         <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-    <div class="flex flex-col items-center md:flex-row md:justify-center  mb-[150px] mt-[60px]">
-  <!-- Naira Card -->
-  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-32 object-cover" src="../images/naira.png" alt="Naira">
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">Withdraw in Naira</div>
-      <p class="text-gray-700 text-base">
-       Minimum: N5000
-      </p>
-    </div>
-    <div class="px-6 py-4">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Pay with Naira
-      </button>
-    </div>
-  </div>
+    <form action="" method="post" class="max-w-md mx-auto">
+        <!-- Name Input -->
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Usdt Wallet Address</label>
+            <input type="text" id="name" name="name" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
 
-  <!-- USDT Card -->
-  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-32 object-cover" src="../assets/image/crypto/USDT.png" alt="USDT">
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">Withdraw in USDT</div>
-      <p class="text-gray-700 text-base">
-      Minimum: 10USDT
-      </p>
-    </div>
-    <div class="px-6 py-4">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Pay with USDT
-      </button>
-    </div>
-  </div>
+        <!-- Email Input -->
+        <div class="mb-4">
+            <label for="Amount" class="block text-gray-700 text-sm font-bold mb-2">Amount</label>
+            <input type="amount" id="amount" name="amount" class="w-full border rounded px-3 py-2 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+
+        
+        <!-- Submit Button -->
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
+    </form>
+
+    <!-- Confirmation Message Container -->
+    <div id="confirmation-message" class="mt-4"></div>
 </div>
-
         
         </div>
 
