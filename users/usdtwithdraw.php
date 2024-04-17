@@ -52,7 +52,7 @@ include('../db/config.php');
 
         
         <!-- Submit Button -->
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">withdraw</button>
     </form>
 
     <!-- Confirmation Message Container -->
@@ -60,7 +60,7 @@ include('../db/config.php');
 </div>
         
         </div>
-
+</div>
 <!--end of component-->
 
 
