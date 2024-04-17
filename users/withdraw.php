@@ -39,12 +39,11 @@ include('../db/config.php');
     <!--component-->
     <div class="flex flex-col items-center md:flex-row md:justify-center  mb-[200px] mt-[60px]">
   <!-- Naira Card -->
-  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/350x150" alt="Naira">
+  <div class="max-w-sm rounded overflow-hidden ../images/naira.png" alt="Naira">
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">Naira Payment</div>
+      <div class="font-bold text-xl mb-2">Withdraw in Naira</div>
       <p class="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor hendrerit turpis at tempor.
+        Minimum: N500 
       </p>
     </div>
     <div class="px-6 py-4">
@@ -56,11 +55,11 @@ include('../db/config.php');
 
   <!-- USDT Card -->
   <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/350x150" alt="USDT">
+    <img class="w-full h-32 object-cover" src="../assets/image/crypto/USDT.png" alt="USDT">
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">USDT Payment</div>
+      <div class="font-bold text-xl mb-2">Withdraw in USDT</div>
       <p class="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor hendrerit turpis at tempor.
+        Minimum: 10USDT
       </p>
     </div>
     <div class="px-6 py-4">
