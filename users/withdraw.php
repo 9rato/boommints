@@ -37,7 +37,40 @@ include('../db/config.php');
         <div class="flex-1 flex flex-col ml-8 card-box">
             <div class="container mx-auto mt-8">
     <!--component-->
-        
+    <div class="flex justify-center">
+  <!-- Naira Card -->
+  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2">
+    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/350x150" alt="Naira">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">Naira Payment</div>
+      <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor hendrerit turpis at tempor.
+      </p>
+    </div>
+    <div class="px-6 py-4">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Pay with Naira
+      </button>
+    </div>
+  </div>
+
+  <!-- USDT Card -->
+  <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2">
+    <img class="w-full h-32 object-cover" src="https://via.placeholder.com/350x150" alt="USDT">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">USDT Payment</div>
+      <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor hendrerit turpis at tempor.
+      </p>
+    </div>
+    <div class="px-6 py-4">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Pay with USDT
+      </button>
+    </div>
+  </div>
+</div>
+
         
         </div>
 
