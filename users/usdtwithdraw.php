@@ -55,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
             $row = $result->fetch_assoc();
             $usdt_balance = $row['USDT_Balance'];
             
-            if ($usdt_balance == 0) {
-                echo "<script>alert('Insufficient balance for withdrawal');</script>";
-            } else {
+            if ($amount <= $usdt_balance) {
                 // Begin transaction
                 $conn->begin_transaction();
                 
@@ -75,6 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
                 
                 // Example of response after successful withdrawal
                 echo "<script>alert('Withdrawal successful!');</script>";
+            } else {
+                echo "<script>alert('Insufficient balance for withdrawal');</script>";
             }
         } else {
             echo "<script>alert('Error fetching user balance');</script>";
