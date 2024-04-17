@@ -40,7 +40,7 @@ include('../db/config.php');
     <div class="flex flex-col items-center md:flex-row md:justify-center  mb-[150px] mt-[60px]">
   <!-- Naira Card -->
   <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-84 object-cover" src="../images/naira.png" alt="Naira">
+    <img class="w-full h-32 object-cover" src="../images/naira.png" alt="Naira">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Withdraw in Naira</div>
       <p class="text-gray-700 text-base">
@@ -49,14 +49,14 @@ include('../db/config.php');
     </div>
     <div class="px-6 py-4">
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Naira
+        Pay with Naira
       </button>
     </div>
   </div>
 
   <!-- USDT Card -->
   <div class="max-w-sm rounded overflow-hidden shadow-lg mx-2 mb-4 md:mb-0">
-    <img class="w-full h-84 object-cover" src="../assets/image/crypto/USDT.png" alt="USDT">
+    <img class="w-full h-32 object-cover" src="../assets/image/crypto/USDT.png" alt="USDT">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Withdraw in USDT</div>
       <p class="text-gray-700 text-base">
@@ -65,7 +65,7 @@ include('../db/config.php');
     </div>
     <div class="px-6 py-4">
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        USDT
+        Pay with USDT
       </button>
     </div>
   </div>
