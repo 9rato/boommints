@@ -48,7 +48,7 @@ include('../db/config.php');
       </p>
     </div>
     <div class="px-6 py-4">
-    <a href="nairatwithdraw.php" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    <a href="nairawithdraw.php" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
     Naira
     </a>
     </div>
