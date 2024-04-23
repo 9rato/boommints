@@ -150,7 +150,7 @@ include('template/header.php');
 
     .marquee div {
     display: inline-block;
-    animation: marquee 150s linear infinite; /* Adjusted duration to further slow down */
+    animation: marquee 1000s linear infinite; /* Adjusted duration to further slow down */
     }
 
     @keyframes marquee {
@@ -185,7 +185,7 @@ include('template/header.php');
         const amount = generateAmount();
         return `
         <div class="transaction-item">
-        m
+
           <p class="pl-8"><strong>Phone Number:</strong> ${phoneNumber} <strong>Amount:</strong> $${amount} <strong>Type:</strong> ${Math.random() > 0.5 ? 'Buy' : 'Sell'} <strong>Date:</strong> ${new Date().toLocaleString()}</p>
         </div>
       `;
