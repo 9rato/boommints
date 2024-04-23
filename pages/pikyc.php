@@ -156,7 +156,7 @@ include('../template/header-one.php');
   <div class="px-4 py-4">
     <img src="../assets/image/crypto/pepe.png" alt="Coin Image" class="w-20 h-20 mx-auto mb-4">
     <h2 class="text-gray-800 text-lg font-semibold text-center">Pepe Coin</h2>
-    <p class="text-gray-600 text-sm text-center">Price: N500</p>
+    <p class="text-gray-600 text-sm text-center">Price: Coming Soon</p>
   </div>
 </div>
 
@@ -165,7 +165,7 @@ include('../template/header-one.php');
   <div class="px-4 py-4">
     <img src="../assets/image/crypto/USDT.png" alt="Coin Image" class="w-20 h-20 mx-auto mb-4">
     <h2 class="text-gray-800 text-lg font-semibold text-center">USTD</h2>
-    <p class="text-gray-600 text-sm text-center">Price: N900</p>
+    <p class="text-gray-600 text-sm text-center">Price: Coming Soon</p>
   </div>
 </div>
 
@@ -174,7 +174,7 @@ include('../template/header-one.php');
   <div class="px-4 py-4">
     <img src="../assets/image/crypto/XRP.png" alt="Coin Image" class="w-20 h-20 mx-auto mb-4">
     <h2 class="text-gray-800 text-lg font-semibold text-center">XRP Coin</h2>
-    <p class="text-gray-600 text-sm text-center">Price: N500</p>
+    <p class="text-gray-600 text-sm text-center">Price: Coming Soon</p>
   </div>
 </div>
 
