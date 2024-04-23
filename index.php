@@ -150,7 +150,7 @@ include('template/header.php');
 
     .marquee div {
         display: inline-block;
-        animation: marquee 700s linear infinite; /* Increased duration to slow down */
+        animation: marquee 300s linear infinite; /* Increased duration to slow down */
     }
 
     @keyframes marquee {
