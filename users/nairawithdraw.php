@@ -47,15 +47,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
         $account_number = $_POST['account_number']; 
         $account_name = $_POST['account_name']; 
         $amount = $_POST['amount'];
-        $withdrawal_method = "USDT"; // Assuming withdrawal method is USDT
+        $withdrawal_method = "Naira"; // Assuming withdrawal method is USDT
         
         // Fetch user's current balance
-        $check_balance_sql = "SELECT USDT_Balance FROM usdt WHERE user_id = '$user_id'";
+        $check_balance_sql = "SELECT Naira_Balance FROM usdt WHERE user_id = '$user_id'";
         $result = $conn->query($check_balance_sql);
         
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $usdt_balance = $row['USDT_Balance'];
+            $usdt_balance = $row['Naira_Balance'];
             
             if ($amount <= $usdt_balance) {
                 // Begin transaction
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name']) && isset($_PO
                 $conn->query($insert_sql);
                 
                 // Deduct withdrawn amount from user balance
-                $update_balance_sql = "UPDATE usdt SET USDT_Balance = USDT_Balance - $amount WHERE user_id = '$user_id'";
+                $update_balance_sql = "UPDATE naira SET Naira_Balance = Naira_Balance - $amount WHERE user_id = '$user_id'";
                 $conn->query($update_balance_sql);
                 
                 // Commit transaction

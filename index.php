@@ -218,7 +218,7 @@ include('template/header.php');
         <div class="bg-gray-100 p-4 md:p-8">
             <h4 class="text-sm text-center font-bold md:mt-10 mb-4 text-violet-950">Also, support and join our social links for more updates</h4>
             <div class="flex flex-col md:flex-row items-center md:gap-4 md:ml-2 ml-8">
-    <a href="https://t.me/boommint_" target="_blank" rel="noopener noreferrer" class="flex items-center bg-black text-white font-bold py-2 px-4 rounded md:mb-0 mb-2">
+    <a href="https://twitter.com/boommint_" target="_blank" rel="noopener noreferrer" class="flex items-center bg-black text-white font-bold py-2 px-4 rounded md:mb-0 mb-2">
         <img src="./assets/image/items/twitter-154-svgrepo-com.svg" class="w-12 h-12 mr-2" alt="" srcset="">
         <p>Join us on Twitter</p>
     </a>
