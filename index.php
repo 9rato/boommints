@@ -185,6 +185,7 @@ include('template/header.php');
         const amount = generateAmount();
         return `
         <div class="transaction-item">
+        m
           <p class="pl-8"><strong>Phone Number:</strong> ${phoneNumber} <strong>Amount:</strong> $${amount} <strong>Type:</strong> ${Math.random() > 0.5 ? 'Buy' : 'Sell'} <strong>Date:</strong> ${new Date().toLocaleString()}</p>
         </div>
       `;
