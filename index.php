@@ -344,7 +344,7 @@ include('template/header.php');
     <!-- First Testimony Card -->
     <div class="max-w-xs mx-2 my-4 bg-yellow-300 shadow-lg rounded-lg overflow-hidden testimony-card">
       <div class="px-4 py-2">
-        <p class="text-gray-800 text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="text-gray-800 text-base">Boommint made trading Pi Coin a breeze! Their platform is user-friendly, and I was able to buy and sell Pi Coin effortlessly. I highly recommend Boommint to anyone interested in Pi Coin trading.</p>
       </div>
       <div class="px-4 py-2">
         <p class="text-gray-600 text-sm italic">- John Doe</p>

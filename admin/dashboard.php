@@ -577,6 +577,7 @@ mysqli_close($conn);
     <script>
     /*Toggle dropdown list*/
     /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+    /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
     var userMenuDiv = document.getElementById("userMenu");
     var userMenu = document.getElementById("userButton");
