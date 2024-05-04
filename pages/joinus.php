@@ -11,7 +11,7 @@
   <div class="text-center">
     <h1 class="text-4xl font-bold mb-8">Social Media Links</h1>
     <div class="space-x-4">
-      <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
+      <a href="https://web.facebook.com/profile.php?id=61559236801361" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
         <i class="fab fa-facebook-square mr-2"></i> Facebook
       </a>
       <a href="https://wa.me/+2348146883083" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none">
